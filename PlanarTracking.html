@@ -1,0 +1,773 @@
+<html><head><script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<style type="text/css">
+	body {
+		font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+		font-weight:300;
+		font-size:18px;
+		margin-left: auto;
+		margin-right: auto;
+		width: 1100px;
+	}
+	table.exampe{
+		width: 1100px;
+	}
+
+	h1 {
+		font-size:32px;
+		font-weight:300;
+	}
+	div.exampe{
+		width: 1100px;
+	}
+	.disclaimerbox {
+		background-color: #eee;
+		border: 1px solid #eeeeee;
+		border-radius: 10px ;
+		-moz-border-radius: 10px ;
+		-webkit-border-radius: 10px ;
+		padding: 20px;
+	}
+	a {
+	    text-decoration: underline;
+    	color: #333;
+	}
+	a:link :hover :visited{
+	    text-decoration: underline;
+        color: #333;
+	}
+	video.header-vid {
+		height: 140px;
+		border: 1px solid black;
+		border-radius: 10px ;
+		-moz-border-radius: 10px ;
+		-webkit-border-radius: 10px ;
+	}
+
+	img.header-img {
+		height: 140px;
+		border: 1px solid black;
+		border-radius: 10px ;
+		-moz-border-radius: 10px ;
+		-webkit-border-radius: 10px ;
+	}
+
+	img.rounded {
+		border: 1px solid #eeeeee;
+		border-radius: 10px ;
+		-moz-border-radius: 10px ;
+		-webkit-border-radius: 10px ;
+	}
+
+	/*a:link,a:visited
+	{
+		color: #1367a7;
+		text-decoration: none;
+	}
+	a:hover {
+		color: #208799;
+	/**!}*/
+	img.challenge{
+		alignment: center;
+	}
+
+	td.dl-link {
+		height: 160px;
+		text-align: center;
+		font-size: 22px;
+	}
+	td.example_last_row {
+		width: 110px;
+	}
+	.layered-paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+		box-shadow:
+		0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+		5px 5px 0 0px #fff, /* The second layer */
+		5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+		10px 10px 0 0px #fff, /* The third layer */
+		10px 10px 1px 1px rgba(0,0,0,0.35), /* The third layer shadow */
+		15px 15px 0 0px #fff, /* The fourth layer */
+		15px 15px 1px 1px rgba(0,0,0,0.35), /* The fourth layer shadow */
+		20px 20px 0 0px #fff, /* The fifth layer */
+		20px 20px 1px 1px rgba(0,0,0,0.35), /* The fifth layer shadow */
+		25px 25px 0 0px #fff, /* The fifth layer */
+		25px 25px 1px 1px rgba(0,0,0,0.35); /* The fifth layer shadow */
+		margin-left: 10px;
+		margin-right: 45px;
+	}
+
+	.paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+		box-shadow:
+		0px 0px 1px 1px rgba(0,0,0,0.35); /* The top layer shadow */
+
+		margin-left: 10px;
+		margin-right: 45px;
+	}
+
+
+	.layered-paper { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+		box-shadow:
+		0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+		5px 5px 0 0px #fff, /* The second layer */
+		5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+		10px 10px 0 0px #fff, /* The third layer */
+		10px 10px 1px 1px rgba(0,0,0,0.35); /* The third layer shadow */
+		margin-top: 5px;
+		margin-left: 10px;
+		margin-right: 30px;
+		margin-bottom: 5px;
+	}
+
+	.vert-cent {
+		position: relative;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+	.nerf_hea/*der {
+    margin-top: -64px;
+    margin-bottom: 42px;
+    color: #d4d4d4
+	}*/
+
+	hr
+	{
+		border: 0;
+		height: 1px;
+		background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+	}
+	.nerf_subheader_v2 {
+    margin-top: 0;
+    margin-bottom: 29px;
+    font-family: 'Open Sans', sans-serif;
+    color: #333;
+    font-size: 20px;
+    line-height: 44px;
+    font-weight: 500;
+    letter-spacing: 0;
+    font-size:24px;
+	}
+	.nerf_header_v2 {
+    padding: 31px 15px;
+    background-color: #fff;
+    color: #d4d4d4;
+    /*font: ;*/
+	}
+	.header_v2{
+	color: #d4d4d4;
+	/*font: bold 100%/1 Rockwell, serif;*/
+	/*background: hsl(0, 50%, 50%);*/
+	text-shadow:  1px 1px black, 2px 2px black,
+	3px 3px black, 4px 4px black,
+	3px 3px black, 3px 3px black;
+	/*7px 7px black, 8px 8px black;*/
+	}
+	.bracket{
+		/*font: normal 140%/1 Helvetica, sans-serif;*/
+		color: #208799;/*#ffc;*/
+		font-size: 20px;
+
+	}
+	.glow {
+		/*font: normal 140%/1 Helvetica, sans-serif;*/
+		/*margin: 0;*/
+		color: #208799;/*#ffc;*/
+		text-decoration: none;
+		transition: 1s;
+		text-shadow:  0 0 1px black, 0 0/* 1px black,
+		0 0 1px black, 0 0 1px black,
+		0 0 1px black, 0 0 1px black;*/
+/*		text-shadow: 0 1px hsl(0,0%,85%),
+             0 2px hsl(0,0%,80%),
+             0 3px hsl(0,0%,75%),
+             0 4px hsl(0,0%,70%),
+             0 5px hsl(0,0%,65%),
+             0 5px 10px black;*/
+	}
+
+	.glow:hover {
+		color: #ffc;
+		font: bold 22px Helvetica, sans-serif;
+		/*text-shadow: 0 0 .1em, 0 0 .3em; */
+		text-shadow: 0 1px hsl(0,0%,85%),
+             0 2px hsl(0,0%,80%),
+             0 3px hsl(0,0%,75%),
+             0 4px hsl(0,0%,70%),
+             0 5px hsl(0,0%,65%),
+             0 5px 10px black;
+	}
+	#demo{
+		display:grid;
+		grid-template-columns : 0.9fr 0.9fr 1fr 1fr;
+		grid-template-rows: 500px;
+		grid-template-areas: "mosiac v-rep i-rep i-edit";
+		/*grid-template-rows: auto auto 600px auto auto ;*/
+/*		grid-template-areas:"top-bar top-bar top-bar"
+							"main-header main-header main-header "
+							". content ."
+							". remain . "
+							" .  main-footer .";*/
+	}
+	.i-rep{
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows:  20px 225px 115px 115px;
+		grid-template-areas:"v-hor1 v-hor1 "
+							"v-ver1 v-ver2"
+							"v-hor2 v-hor2"
+							"v-hor3 v-hor3";
+
+	}
+	.i-edit{
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows:  20px 240px 225px;
+		grid-template-areas:"v-hor1 v-hor1 "
+							"v-ver1 v-ver2"
+							"v-ver3 v-ver4";
+
+	}
+	.mosiac,.v-rep{
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows:  20px 120px 120px 120px 120px;
+		grid-template-areas:"v-hor1"
+							"v-hor2"
+							"v-hor3"
+							"v-hor4"
+							"v-hor5";
+
+	}
+/*	.i-edit{
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows:  20px 120px 120px 300px;
+		grid-template-areas:"v-hor1"
+							"v-hor2"
+							"v-hor3"
+							"v-hor4"
+							"v-hor5";
+	}*/
+
+	.v-ver1{
+		grid-area: v-ver1;
+
+	}
+	.v-hor1{
+		grid-area: v-hor1;
+
+	}
+	.v-ver2{
+		grid-area: v-ver2;
+
+	}
+	.v-hor2{
+		grid-area: v-hor2;
+
+	}
+	.v-hor3{
+		grid-area: v-hor3;
+
+	}
+	.v-hor4{
+		grid-area: v-hor4;
+
+	}
+	.v-hor5{
+		grid-area: v-hor5;
+
+	}
+	.bib{
+		background: #E6E6E6;
+		border-radius: 0.8em;
+		padding: 5px;
+		font-weight: 200;
+		color: #626262;
+		font-size: 14px;
+	}
+	.content{
+	    color: #333;
+	    font-weight: 200;
+		/*font: ;*/
+	}
+div.eva1{
+	width: 360px;
+	alignment: left;
+}
+div.eva2{
+	width: 580px;
+	alignment: right;
+}
+
+</style>
+
+
+
+    <!-- <link href="./GAN-Supervised Dense Visual Alignment_files/gangealing.css" rel="stylesheet" type="text/css"> -->
+	<title>HDN</title>
+    <!-- <h1 class="nerf_subheader_v2">GAN-Supervised Dense Visual Alignment</h1> -->
+	<meta property="og:image" content="resources/teaser.png"> <!-- Facebook automatically scrapes this. Go to https://developers.facebook.com/tools/debug/ if you update and want to force Facebook to rescrape. -->
+	<meta property="og:title" content="HDN">
+	<meta property="og:description" content="Homography Decomposition Networks for Planar Object Tracking.">
+
+	<!-- Get from Google Analytics -->
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async="" src=""></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-75863369-6');
+	</script>
+</head>
+
+<body>
+	<br>
+	<center>
+<!--		<span style="font-size:36px" class="header_v2">HDN</span>-->
+        <div class="nerf_subheader_v2">PlanarTrack: A Large-scale Challenging Benchmark for Planar Object Tracking</div>
+
+		<table align="center" width="600px">
+			</table>
+<!--		<table align="center" width="600px">-->
+<!--				<tbody><tr>-->
+<!--					<td align="center" width="100px">-->
+<!--						<center>-->
+<!--							&lt;!&ndash; <span style="font-size:24px"><a href="https://en.wikipedia.org/wiki/James_J._Gibson">Xinrui Zhan</a></span> &ndash;&gt;-->
+<!--							<div style="font-size:14px">Xinrui Zhan</a></div>-->
+<!--							<div style="font-size:14px">Zhejiang University</div>-->
+<!--						</center>-->
+<!--					</td>-->
+<!--					<td align="center" width="100px">-->
+<!--						<center>-->
+<!--							&lt;!&ndash; <span style="font-size:24px"><a href="https://en.wikipedia.org/wiki/James_J._Gibson">Yueran Liu</a></span> &ndash;&gt;-->
+<!--							<div style="font-size:14px">Yueran Liu</div>-->
+<!--							<div style="font-size:14px">Zhejiang University</div>-->
+<!--						</center>-->
+<!--					</td>-->
+<!--					<td align="center" width="100px">-->
+<!--						<center>-->
+<!--							&lt;!&ndash; <span style="font-size:24px"><a href="https://en.wikipedia.org/wiki/James_J._Gibson">Jianke Zhu</a></span> &ndash;&gt;-->
+<!--							<div style="font-size:14px">Jianke Zhu</div>-->
+<!--							<div style="font-size:14px">Zhejiang University</div>-->
+<!--						</center>-->
+<!--					</td>-->
+<!--					<td align="center" width="100px">-->
+<!--						<center>-->
+<!--							&lt;!&ndash; <span style="font-size:24px"><a href="https://en.wikipedia.org/wiki/James_J._Gibson">Yang Li</a></span> &ndash;&gt;-->
+<!--							<div style="font-size:14px">Yang Li</div>-->
+<!--							<div style="font-size:14px">East China Normal University</div>-->
+<!--						</center>-->
+<!--					</td>-->
+<!--				</tr>-->
+<!--			</tbody></table>-->
+			<table align="center" width="400px">
+				<tbody><tr>
+					<td align="center" width="120px">
+						<center>
+							<span class="bracket">[ <a class="glow" href="">Paper</a> ]</span>
+						</center>
+					</td>
+					<td align="center" width="120px">
+						<center>
+							<span class="bracket">[ <a class="glow" href="">Codes</a> ]</span><br>
+						</center>
+					</td>
+					<td align="center" width="160px">
+						<center>
+							<span class="bracket">[ <a class="glow" href="">MindSpore</a> ]</span><br>
+						</center>
+					</td>
+				</tr>
+			</tbody></table>
+
+	</center>
+
+
+	<hr>
+
+	<center><h1>Abstract</h1></center><table align="center" width="850px">
+
+		<tbody><tr>
+			<td class="content">
+				  Planar object tracking is a critical computer vision problem and has drawn increasing interest owing to its key roles in robotics, augmented reality, etc. Despite rapid progress, its further development, especially in the deep learning era, is largely hindered due to the lack oflarge-scale challenging benchmarks. Addressing this, we introduce PlanarTrack, a large-scale challenging planar tracking benchmark. Specifically, PlanarTrack consists of1,000 videos with more than 490K images. All these videos are collected in complex unconstrained scenarios from the wild, which makes PlanarTrack, compared with existing benchmarks, more challenging but realistic for real-world applications. To ensure the high-quality annotation, each frame in PlanarTrack is manually labeled using four corners with multiple-round careful inspection and refinement. To our best knowledge, PlanarTrack, to date, is the largest and most challenging dataset dedicated to planar object tracking. In order to analyze the proposed PlanarTrack, we evaluate 10 planar trackers and conduct comprehensive comparisons and in-depth analysis. Our results, not surprisingly, demonstrate that current topperforming planar trackers degenerate significantly on the challenging PlanarTrack and more efforts are needed to improve planar tracking in the future. In addition, we further derive a variant named PlanarTrackBB for generic object tracking from PlanarTrack. Our evaluation of10 excellent generic trackers on PlanarTrackBB manifests that, surprisingly, PlanarTrackBB is much more challenging than popular generic tracking benchmarks and more attention should be paid to handle such planar objects, though they are rigid. All benchmarks, evaluation and analysis will be released.
+			</td>
+		</tr>
+	</tbody></table>
+	<br>
+
+<!--	<hr>-->
+	<!-- <center><h1>Talk</h1></center>
+	<p align="center">
+		<iframe width="660" height="395" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen align="center"></iframe>
+	</p>
+
+	<table align=center width=800px>
+		<br>
+		<tr>
+			<center>
+				<span style="font-size:28px"><a href=''>[Slides]</a>
+				</span>
+			</center>
+		</tr>
+	</table>
+	<hr> -->
+
+
+	<hr>
+	<center>
+		<!-- <table align=center width=850px> -->
+			<!-- <tr> -->
+				<!-- <td width=460px> -->
+		<center><h1>Examples</h1></center>
+		<div>
+			<table>
+			<tbody>
+				<tr>
+					<td>
+						<img src="../Example_images/1.png" alt="" width="180px">
+					</td>
+					<td>
+						<img src="../Example_images/2.png" alt="" width="180px">
+					</td>
+					<td>
+						<img src="../Example_images/3.png" alt="" width="180px">
+					</td>
+					<td>
+						<img src="../Example_images/4.png" alt="" width="180px">
+					</td>
+					<td>
+						<img src="../Example_images/5.png" alt="" width="180px">
+					</td>
+					<td>
+						<img src="../Example_images/6.png" alt="" width="180px">
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<table>
+			<tbody>
+				<tr>
+					<td>
+						<img src="../Example_images/7.png" alt="" width="180px">
+					</td>
+					<td>
+						<img src="../Example_images/8.png" alt="" width="180px">
+					</td>
+					<td>
+						<img src="../Example_images/9.png" alt="" width="180px">
+					</td>
+					<td>
+						<img src="../Example_images/10.png" alt="" width="180px">
+					</td>
+					<td>
+						<img src="../Example_images/11.png" alt="" width="180px">
+					</td>
+					<td>
+						<img src="../Example_images/12.png" alt="" width="180px">
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<table>
+			<tbody>
+				<tr>
+					<td class="example_last_row">
+						<img src="../Example_images/13.png" alt="" width="108px">
+					</td>
+					<td class="example_last_row">
+						<img src="../Example_images/14.png" alt="" width="108px">
+					</td>
+					<td class="example_last_row">
+						<img src="../Example_images/15.png" alt="" width="108px">
+					</td>
+					<td class="example_last_row">
+						<img src="../Example_images/16.png" alt="" width="108px">
+					</td>
+					<td class="example_last_row">
+						<img src="../Example_images/17.png" alt="" width="108px">
+					</td>
+					<td class="example_last_row">
+						<img src="../Example_images/18.png" alt="" width="108px">
+					</td>
+				   <td class="example_last_row">
+						<img src="../Example_images/19.png" alt="" width="108px">
+					</td>
+					<td class="example_last_row">
+						<img src="../Example_images/20.png" alt="" width="108px">
+					</td>
+					<td class="example_last_row">
+						<img src="../Example_images/21.png" alt="" width="108px">
+					</td>
+					<td class="example_last_row">
+						<img src="../Example_images/22.png" alt="" width="108px">
+					</td>
+				</tr>
+			</tbody>
+
+		</table>
+		<table>
+			<tbody>
+			<tr>
+				<td class="content" align="center" height="60px">
+					<img src="../labels/1.png" width="14px">, <img src="../labels/2.png" alt="">, <img src="../labels/3.png" alt=""> and <img
+						src="../labels/4.png" alt=""> represent the first, second, third and fourth corner point of the planar object
+				</td>
+			</tr>
+			</tbody>
+		</table>
+		</div>
+<!--       <div id="demo" class="example">-->
+
+
+<!--       	</div>-->
+
+	</center>
+
+	<hr>
+
+	<center>
+		<center>
+			<h1>
+				Challenging Factors
+			</h1>
+		</center>
+		<div>
+			<table>
+				<tbody>
+				<tr>
+					<td class="content">
+						We define eight challenging factors that widely exist for planar tracking and annotate each sequence with these factors,  including (1) occlusion (OCC), (2) motion blur (MB), (3)  rotation (ROT), (4) scale variation (SV), which is assigned  when the ratio of planar annotation is outside the range [0.5, 2], (5) perspective distortion (PD), which is assigned when  the perspective between the object and camera is changed, (6) out-of-view (OV), (7) low resolution (LR),  which is assigned when the region of the target planar is less than 1,000  pixels, and (8) background clutter (BC), which is assigned  when the background region looks visually similar to the  target.
+					</td>
+				</tr>
+				<tr>
+					<td class="dl-link">
+						<img class = "challenge" src="../Challenge/1.png" width="800px" alt="">
+					</td>
+				</tr>
+				<tr>
+					<td class="content" align="center" height="60px">
+						The image above indicate the distributions of sequences on each challenging factors.
+					</td>
+				</tr>
+
+				</tbody>
+			</table>
+		</div>
+	</center>
+	<hr>
+
+
+	<center><h1>Evaluations & Results</h1></center>
+<!--
+	<table align=center width=420px>
+		<center>
+			<tr>
+				<td>
+				</td>
+			</tr>
+		</center>
+	</table> -->
+	<table>
+		<tbody>
+		<tr>
+			<td width="400px" align="center">
+				<img src="../Evaluations/1.png" alt="">
+			</td>
+			<td width="700px" align="center">
+				<img src="../Evaluations/3.png" alt="" width="600px">
+				<p>
+					(a) Evaluation on the two most common challenging factors using precision
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td width="400px" align="center">
+				<img src="../Evaluations/2.png" alt="">
+			</td>
+			<td width="700px" align="center">
+				<img src="../Evaluations/4.png" alt="" width="600px">
+				<p>
+					(b) Evaluation on the two most difficult challenging factors using precision
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class="content" width="400px" align="center" height="100px">
+				Overall performance on PlanarTrackTst in terms of
+				precision (left) and success (right)
+			</td>
+			<td class="content" width="700px" align="center" height="100px">
+				Performance evaluation of trackers on the two most common challenging factors including perspective distortion and scale variation and on the two most difficult challenging factors including low resolution and motion blur using precision (Please refer to supplementary material for full results and comparisons).
+			</td>
+		</tr>
+		</tbody>
+	</table>
+
+
+
+		<table align="center" width="850px">
+		<tbody>
+		<tr>
+			<td><img src="../Evaluations/5.png" alt="" width="180px"></td>
+				<td><img src="../Evaluations/6.png" alt="" width="180px"></td>
+				<td><img src="../Evaluations/7.png" alt="" width="180px"></td>
+			<td><img src="../Evaluations/8.png" alt="" width="180px"></td>
+				<td><img src="../Evaluations/9.png" alt="" width="180px"></td>
+				<td><img src="../Evaluations/10.png" alt="" width="180px"></td>
+		</tr>
+		</tbody></table>
+		<table>
+			<tbody>
+			<tr>
+				<td width="550px">
+					<p align="center">
+						(a) Sequence with background clutter and scale variation
+					</p>
+				</td>
+				<td width="550px">
+					<p align="center">
+						 (b) Sequence with scale variation and perspective distortion
+					</p>
+				</td>
+			</tr>
+			</tbody>
+		</table>
+		<table><tbody>
+		<tr>
+			<td><img src="../Evaluations/11.png" alt="" width="180px"></td>
+				<td><img src="../Evaluations/12.png" alt="" width="180px"></td>
+				<td><img src="../Evaluations/13.png" alt="" width="180px"></td>
+			<td><img src="../Evaluations/14.png" alt="" width="180px"></td>
+				<td><img src="../Evaluations/15.png" alt="" width="180px"></td>
+				<td><img src="../Evaluations/16.png" alt="" width="180px"></td>
+		</tr>
+		</tbody>
+
+		</table>
+
+		<table>
+			<tbody>
+			<tr>
+				<td width="550px">
+					<p align="center">
+						(c) Sequence with background clutter and perspective distortion
+					</p>
+				</td>
+				<td width="550px">
+					<p align="center">
+						  (d) Sequence with background clutter and rotation
+					</p>
+				</td>
+			</tr>
+			</tbody>
+		</table>
+		<table><tbody>
+		<tr>
+			<td><img src="../Evaluations/17.png" alt="" width="180px"></td>
+				<td><img src="../Evaluations/18.png" alt="" width="180px"></td>
+				<td><img src="../Evaluations/19.png" alt="" width="180px"></td>
+			<td><img src="../Evaluations/20.png" alt="" width="180px"></td>
+				<td><img src="../Evaluations/21.png" alt="" width="180px"></td>
+				<td><img src="../Evaluations/22.png" alt="" width="180px"></td>
+		</tr>
+		</tbody>
+
+		</table>
+
+		<table>
+			<tbody>
+			<tr>
+				<td width="550px">
+					<p align="center">
+						(e) Sequence with motion blur and out-of-view
+					</p>
+				</td>
+				<td width="550px">
+					<p align="center">
+						  (f) Sequence with low resolution and perspective distortion
+					</p>
+				</td>
+			</tr>
+			</tbody>
+		</table>
+		<table>
+			<tbody>
+			<tr>
+				<td align="center">
+					<img src="../Evaluations/23.png" alt="" width="800px">
+				</td>
+
+			</tr>
+			<tr>
+				<td class="content" align="center" height="80px">
+					Qualitative results of five trackers with the highest precision scores on different sequences. We observe that these planar trackers
+drift to the background region or even lose the target object due to different challenging factors in the videos such as background clutter,
+scale variation, perspective distortion, motion blur, rotation, out-of-view and low resolution.
+
+				</td>
+			</tr>
+			</tbody>
+		</table>
+
+
+
+
+
+
+
+
+<!-- 	<table align=center width=800px>
+		<br>
+		<tr><center>
+			<span style="font-size:28px">&nbsp;<a href='https://github.com/richzhang/webpage-template'>[GitHub]</a>
+			</center>
+		</span>
+	</table> -->
+	<br>
+	<hr>
+	<center><h1>BibTeX</h1></center><table align="center" width="900px">
+
+		<tbody><tr>
+			<td class="bib">
+				@misc{zhan2021homography,
+				      title={Homography Decomposition Networks for Planar Object Tracking}, <br>
+				      author={Xinrui Zhan and Yueran Liu and Jianke Zhu and Yang Li},<br>
+				      year={2021},<br>
+				      eprint={2112.07909},<br>
+				      archivePrefix={arXiv},<br>
+				      primaryClass={cs.CV}
+				}
+			</td>
+		</tr>
+	</tbody></table>
+	<br>
+
+<!-- 	<table align=center width=600px>
+		<tr>
+			<td><span style="font-size:14pt"><center>
+				<a href="./resources/bibtex.txt">[Bibtex]</a>
+			</center></td>
+		</tr>
+	</table> -->
+
+	<hr>
+	<br>
+
+	<table align="center" width="900px">
+		<tbody><tr>
+			<td width="400px">
+				<left>
+					<center><h1>Acknowledgements</h1></center>
+					<span class="content">
+					This work is supported by the National Natural Science Foundation of China under Grants (61831015 and 62102152) and sponsored by CAAI-Huawei MindSpore Open Fund.  Most of the demo videos are from <a href="http://web.mit.edu/phillipi/">Pexels</a>. The image editing assets comes from <a href="https://www.wpeebles.com/gangealing">Gangealing.</a>
+					This template was originally made by <a href="http://web.mit.edu/phillipi/">Phillip Isola</a> and <a href="http://richzhang.github.io/">Richard Zhang</a> for a <a href="http://richzhang.github.io/colorization/">colorful</a> ECCV project; the code can be found <a href="https://github.com/richzhang/webpage-template">here</a>.
+					<span>
+				</span></span></left>
+			</td>
+		</tr>
+	</tbody></table>
+
+<br>
+
+
+</body></html>
